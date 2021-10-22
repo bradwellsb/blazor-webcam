@@ -30,7 +30,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await JSRuntime.InvokeVoidAsync("startVideo", "videoFeed", DotNetObjectReference.Create(this));
+        await JSRuntime.InvokeVoidAsync("startVideo", "videoFeed");
 
         //Font stored in wwwroot. Fetch it as byte array, and use it
         var fontBytes = await Http.GetByteArrayAsync("OpenSans-Regular.ttf");

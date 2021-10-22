@@ -1,4 +1,4 @@
-function startVideo(src, dotNetHelper) {
+function startVideo(src) {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
             let video = document.getElementById(src);
@@ -17,9 +17,9 @@ function startVideo(src, dotNetHelper) {
     }
 }
 
-function getFrame(src, canv, dotNetHelper) {
+function getFrame(src, dest, dotNetHelper) {
     let video = document.getElementById(src);
-    let canvas = document.getElementById(canv);
+    let canvas = document.getElementById(dest);
     canvas.getContext('2d').drawImage(video, 0, 0, 320, 240);
 
     let dataUrl = canvas.toDataURL("image/jpeg");
