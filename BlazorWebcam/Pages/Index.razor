@@ -48,7 +48,7 @@
     [JSInvokable]
     public void ProcessImage(string imageString)
     {
-        byte[] imageData = Convert.FromBase64String(imageString);
+        byte[] imageData = Convert.FromBase64String(imageString.Split(',')[1]);
 
         //Do image processing here
 

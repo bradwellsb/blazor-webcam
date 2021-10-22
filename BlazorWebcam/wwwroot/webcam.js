@@ -23,5 +23,5 @@ function getFrame(src, dest, dotNetHelper) {
     canvas.getContext('2d').drawImage(video, 0, 0, 320, 240);
 
     let dataUrl = canvas.toDataURL("image/jpeg");
-    dotNetHelper.invokeMethodAsync('ProcessImage', dataUrl.split(',')[1]);
+    dotNetHelper.invokeMethodAsync('ProcessImage', dataUrl);
 }
