@@ -25,3 +25,15 @@ function getFrame(src, dest, dotNetHelper) {
     let dataUrl = canvas.toDataURL("image/jpeg");
     dotNetHelper.invokeMethodAsync('ProcessImage', dataUrl);
 }
+
+function stopVideo(src) {
+    let video = document.getElementById(src);
+    if (video && "srcObject" in video) {
+        const stream = video.srcObject;
+        if (stream) {
+            const tracks = stream.getTracks();
+            tracks.forEach(track => track.stop());
+        }
+        video.srcObject = null;
+    }
+}
